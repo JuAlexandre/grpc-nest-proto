@@ -24,6 +24,24 @@ message CreateProductResponse {
   int32 id = 3;
 }
 
+// FindAllProducts
+
+message FindAllProductsData {
+  int32 id = 1;
+  string name = 2;
+  string sku = 3;
+  int32 stock = 4;
+  double price = 5;
+}
+
+message FindAllProductsRequest {}
+
+message FindAllProductsResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  repeated FindAllProductsData data = 3;
+}
+
 // FindOneProduct
 
 message FindOneProductData {
@@ -42,24 +60,6 @@ message FindOneProductResponse {
   int32 status = 1;
   repeated string error = 2;
   FindOneProductData data = 3;
-}
-
-// FindAllProducts
-
-message FindAllProductsData {
-  int32 id = 1;
-  string name = 2;
-  string sku = 3;
-  int32 stock = 4;
-  double price = 5;
-}
-
-message FindAllProductsRequest {}
-
-message FindAllProductsResponse {
-  int32 status = 1;
-  repeated string error = 2;
-  repeated FindAllProductsData data = 3;
 }
 
 // DecreaseStock
